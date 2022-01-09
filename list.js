@@ -3,7 +3,7 @@ $ = function(_id) {
 }
 _bind = function(func, that) {
   return function() {
-    func.call(that)
+    func.call(that);
   }
 }
 
@@ -25,7 +25,7 @@ function TodoView(myList, finishedListView) {
     }
   }
   this.toggleView();
-  this.bind()
+  this.bind();
 }
 
 TodoView.prototype.bind = function() {
