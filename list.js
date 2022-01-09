@@ -7,7 +7,7 @@ _bind = function(func, that) {
   }
 }
 
-function TodoView(myList, finishedListView) {
+function TodoView(myList) {
   this.myList = myList;
   this.todoListView = $("list-content");
   this.finishedListView = $("finished-list-content");
@@ -67,5 +67,5 @@ TodoView.prototype.addBtnListener = function() {
 
 TodoView.prototype.addInputListener = function(e) {
   if(e.code !== 'Enter') return;
-  this.addBtnListner();
+  this.addBtnListener();
 }
