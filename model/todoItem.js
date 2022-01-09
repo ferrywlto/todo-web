@@ -1,33 +1,32 @@
-function todoItem(arg) {
+function TodoItem(arg) {
   this.content = arg;
   this.pending = true;
   this.birth = timeStamp();
 }
 
-todoItem.Retore = function(obj) {
-  _item = new todoItem(obj.content);
+TodoItem.Restore = function(obj) {
+  _item = new TodoItem(obj.content);
   _item.pending = obj.pending;
   _item.birth = obj.birth;
   return _item;
 }
 
-todoItem.prototype.finish = function() {
+TodoItem.prototype.finish = function() {
   this.pending = false;
   this.container.saveToLS();
 }
 
-todoItem.prototype.remove = function() {
-  if (this.container.list.indexOf(this) != -1) {
+TodoItem.prototype.remove = function() {
+  if (this.container.list.indexOf(this) !== -1) {
     this.container.list.splice(this.container.list.indexOf(this), 1);
-    // fix bug 2
     this.container.saveToLS();
   }
 }
 
-todoItem.prototype.setDomNode = function(domNode) {
+TodoItem.prototype.setDomNode = function(domNode) {
   this.domNode = domNode;
 }
 
-todoItem.prototype.setContainer = function(container) {
+TodoItem.prototype.setContainer = function(container) {
   this.container = container;
 }

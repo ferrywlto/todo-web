@@ -56,7 +56,7 @@ TodoView.prototype.addBtnListener = function() {
   if (content.length === 0)
     alert('NOTHING TO ADD.');
   else{
-    const item = new todoItem(content);
+    const item = new TodoItem(content);
     this.myList.addTask(item);
     const domItem = todoDomItem(item);
     this.todoListView.appendChild(domItem);
