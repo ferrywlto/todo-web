@@ -29,7 +29,7 @@ function TodoView(myList, finishedListView) {
 }
 
 TodoView.prototype.bind = function() {
-  $("button-add-item").addEventListener('click', _bind(this.addBtnListner, this));
+  $("button-add-item").addEventListener('click', _bind(this.addBtnListener, this));
   $("button-return").addEventListener('click', _bind(this.toggleView, this));
   $("button-view-finished").addEventListener('click', _bind(this.toggleView, this));
 
@@ -51,7 +51,7 @@ TodoView.prototype.toggleView = function() {
   }
 }
 
-TodoView.prototype.addBtnListner = function() {
+TodoView.prototype.addBtnListener = function() {
   var content = this.todoInput.value;
   if (content.length === 0)
     alert('NOTHING TO ADD.');
