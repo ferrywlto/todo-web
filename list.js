@@ -15,8 +15,8 @@ function TodoView(myList) {
   this.finishedView = $("finished-view");
   this.todoInput = $("input-content");
 
-  for (var i = 0; i < myList.list.length; i++) {
-    var item = myList.list[i];
+  for (let i = 0; i < myList.list.length; i++) {
+    const item = myList.list[i];
     if (item.pending) {
       this.todoListView.appendChild(todoDomItem(item));
     }
@@ -52,14 +52,13 @@ TodoView.prototype.toggleView = function() {
 }
 
 TodoView.prototype.addBtnListener = function() {
-  var content = this.todoInput.value;
+  const content = this.todoInput.value;
   if (content.length === 0)
     alert('NOTHING TO ADD.');
   else{
-    var item = new todoItem(content);
+    const item = new todoItem(content);
     this.myList.addTask(item);
-
-    var domItem = todoDomItem(item);
+    const domItem = todoDomItem(item);
     this.todoListView.appendChild(domItem);
     this.todoInput.value = "";
   }
