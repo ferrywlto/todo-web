@@ -19,6 +19,8 @@ todoItem.prototype.finish = function() {
 todoItem.prototype.remove = function() {
   if (this.container.list.indexOf(this) != -1) {
     this.container.list.splice(this.container.list.indexOf(this), 1);
+    // fix bug 2
+    this.container.saveToLS();
   }
 }
 
