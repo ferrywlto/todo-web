@@ -32,6 +32,10 @@ TodoView.prototype.bind = function() {
   $("button-add-item").addEventListener('click', _bind(this.addBtnListner, this));
   $("button-return").addEventListener('click', _bind(this.toggleView, this));
   $("button-view-finished").addEventListener('click', _bind(this.toggleView, this));
+
+  this.todoInput.addEventListener('keypress', (e) => {
+    _bind(this.addInputListener(e), this);
+  });
 }
 
 TodoView.prototype.toggleView = function() {
@@ -59,4 +63,9 @@ TodoView.prototype.addBtnListner = function() {
     this.todoListView.appendChild(domItem);
     this.todoInput.value = "";
   }
+}
+
+TodoView.prototype.addInputListener = function(e) {
+  if(e.code !== 'Enter') return;
+  this.addBtnListner();
 }
