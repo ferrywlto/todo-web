@@ -39,7 +39,7 @@ TodoView.prototype.bind = function() {
 }
 
 TodoView.prototype.toggleView = function() {
-  if (this._state == "todo") {
+  if (this._state === "todo") {
     this.todoView.className = "hidden";
     this.finishedView.className = "";
     this._state = "finished";
@@ -53,7 +53,7 @@ TodoView.prototype.toggleView = function() {
 
 TodoView.prototype.addBtnListner = function() {
   var content = this.todoInput.value;
-  if (content.length == 0)
+  if (content.length === 0)
     alert('NOTHING TO ADD.');
   else{
     var item = new todoItem(content);
