@@ -27,7 +27,7 @@ function todoDomItem(item) {
   delButton.className = 'btn-del';
   delButton.innerHTML = "X";
 
-  delButton.addEventListener('click', getDeleteBtnListner(item));
+  delButton.addEventListener('click', getDeleteBtnListener(item));
 
   domItem.appendChild(delButton);
 
@@ -54,7 +54,7 @@ function finishedDomItem(item) {
   delButton.className = 'btn-del';
   delButton.innerHTML = "X";
 
-  delButton.addEventListener('click', getDeleteBtnListner(item));
+  delButton.addEventListener('click', getDeleteBtnListener(item));
 
   domItem.appendChild(delButton);
 
@@ -70,12 +70,12 @@ function getCheckboxListener(item) {
       //add to finished list in dom
       var domItem = finishedDomItem(item);
       document.getElementById("finished-list-content").appendChild(domItem);
-      
+
     }, 500);
   }
 }
 
-function getDeleteBtnListner(item) {
+function getDeleteBtnListener(item) {
   return function(){
     item.remove();
     //remove from finished list
