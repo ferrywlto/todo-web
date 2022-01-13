@@ -36,7 +36,7 @@ function finishedDomItem(item) {
   text.innerHTML = item.content;
 
   domItem.appendChild(text);
-  const timeStamp = documenty.createElement('span');
+  const timeStamp = document.createElement('span');
   timeStamp.className='time-stamp';
   timeStamp.innerHTML = "Created at " + item.birth;
   domItem.appendChild(timeStamp);

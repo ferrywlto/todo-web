@@ -1,4 +1,5 @@
 function TodoItem(arg) {
+  this.container = null;
   this.content = arg;
   this.pending = true;
   this.birth = timeStamp();
