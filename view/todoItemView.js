@@ -1,6 +1,6 @@
 //convert task item from model to dom element
 //need myList for registering checkbox callback
-function todoDomItem(item) {
+function todoItemView(item) {
   const domItem = document.createElement('li');
   domItem.className = 'list-item';
   item.setDomNode(domItem);
